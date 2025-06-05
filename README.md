@@ -49,18 +49,65 @@ Each result is interpreted and visualized to support preprocessing choices.
 
 ## 📈 Sample Output
 
+Below are example plots produced during the time series analysis:
+
+- Original VIX time series
 <p align="center">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/VIX_1yr.png/800px-VIX_1yr.png" width="600"/>
+  <img src="https://github.com/user-attachments/assets/dc5e31d0-429b-4c53-b6b1-2a843cc15d9f" alt="VIX Time Series" width="600"/>
 </p>
 
-> Example image placeholder — replace with your actual plots once uploaded.
+- STL decomposition: trend, seasonality, residuals
+  The plot below illustrates the STL decomposition of the VIX index into trend, seasonal, and residual components:
 
----
+    - **Trend**: captures the long-term movement of the volatility index  
+    - **Season**: shows recurring short-term cycles  
+    - **Residual**: reflects irregular, unexplained noise 
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/d017de6f-1947-4d7c-978c-464a47f031ca" alt="STL Decomposition" width="600"/>
+</p>
 
-## 📌 Notes
+- Rolling mean and variance visualization
+  The chart below shows the original VIX time series along with its 30-day rolling mean and standard deviation, used for visual stationarity diagnostics.
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/505a4a07-d69e-4499-b92a-f59aafcbfd5d" alt="STL Decomposition" width="600"/>
+</p>
 
-The project focuses purely on exploratory data analysis and signal understanding. No predictive modeling is included yet.  
-It serves as a preparation step for future time series forecasting (e.g., ARIMA, LSTM).
+- ADF and KPSS test statistics
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/d017de6f-1947-4d7c-978c-464a47f031ca" alt="STL Decomposition" width="600"/>
+</p>
+
+> *Note: The project and its accompanying reports were completed in Ukrainian.*
+
+## 📉 Forecasting with ARIMA and GARCH
+
+To evaluate the predictability of VIX dynamics, we implemented both a baseline ARIMA(1,1,1) model and an enhanced ARIMA-GARCH approach.  
+
+Key metrics:
+- **MAE** (mean absolute error): 5.54  
+- **RMSE** (root mean squared error): 8.64
+
+The GARCH-enhanced model provided improved stability and better captured volatility behavior.
+
+### Forecast Comparison
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/65efa751-2806-45ae-a814-366f2ba49db2" alt="ARIMA Baseline Forecast" width="700"/>
+</p>
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/f593bca4-eade-42f3-9349-071591c620fc" alt="ARIMA-GARCH Forecast" width="700"/>
+</p>
+
+### Residual Diagnostics
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/113fde29-d9e2-4d08-9b32-07de315a23e3" alt="ARIMA Residuals" width="600"/>
+</p>
+
+These plots indicate that the enhanced ARIMA-GARCH model reduces residual error and better adapts to volatility clustering.
+
+> *Note: Forecasting analysis was performed in Ukrainian and included in the final report.*
 
 ---
 
